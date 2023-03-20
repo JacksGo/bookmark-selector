@@ -27,8 +27,8 @@ export const exportBookmarks = async (state: State) => {
 
   const date = new Date();
 
-  // Suggested name will be in the format `bookmark_selector_3_4_23.html`.
-  const suggestedName = `bookmark_selector_${date.getMonth()+1}_${date.getDate()}_${date.getFullYear().toString().slice(-2)}.html`;
+  // Suggested name will be in the format `markus_3_4_23.html`.
+  const suggestedName = `markus_${date.getMonth()+1}_${date.getDate()}_${date.getFullYear().toString().slice(-2)}.html`;
 
   const dataBlob = new Blob([textContent], { type: 'text/html' });
   const objectURL = window.URL.createObjectURL(dataBlob);

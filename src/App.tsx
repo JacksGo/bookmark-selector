@@ -1,6 +1,9 @@
-import { Body1, Title1, makeStyles, tokens } from '@fluentui/react-components';
+/// <reference types="vite-plugin-svgr/client" />
+
+import { Body1, makeStyles, tokens } from '@fluentui/react-components';
 import { useContext, useEffect } from 'react';
 
+import { ReactComponent as MarkusLogo } from './assets/markus.svg';
 import Bookmarks from './components/Bookmarks';
 import Loading from './components/Loading';
 import Uploader from './components/Uploader';
@@ -24,6 +27,9 @@ const useStyles = makeStyles({
     rowGap: tokens.spacingVerticalS,
     marginBlockEnd: tokens.spacingVerticalL
   },
+  logo: {
+    height: '60px'
+  }
 });
 
 function App() {
@@ -50,7 +56,8 @@ function App() {
   return (
     <div className={classes.body}>
       <div className={classes.title}>
-        <Title1>Bookmark Selector</Title1>
+        <style>{`#flag { fill: #f00; }`}</style>
+        <MarkusLogo className={classes.logo}/>
         <Body1>Enables a user to import only a portion of their Chromium bookmarks.</Body1>
       </div>
       
